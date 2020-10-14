@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./blogs.css" />
+		<link rel="stylesheet" href="prism/prism.css" />
+		<script src="prism/prism.js"></script>
+
+		<title>Sort Visualizer - Learn Merge Sort</title>
+	</head>
+
+	<body>
+		<div class="blog-container">
+			<h1>Merge Sort</h1>
+			<p class="tagline">Merge sort is dope.</p>
+			<!-- <div class="heading-underline"></div> -->
+			<div class="blog-body">
+				Merge Sort is a Divide and Conquer algorithm. It divides the provided
+				array in two halves, calls itself for the two halves and then merges the
+				two sorted halves. This process is done recursively.
+
+				<div class="code-snippet">
+					<pre class="code-snippet">
+            <code class="language-c">
+// merge function
+void merge(int arr[], int start, int end) {
+  int mid = (start + end) / 2;
+
+  int i = start;
+  int j = mid + 1;
+  int k = start;
+
+  int temp[1000];
+
+  while(i <= mid && j <= end) {
+    if(arr[i] <= arr[j]) {
+      temp[k++] = arr[i++];
+    } else {
+      temp[k++] = arr[j++];
+    }
+  }
+
+  while(i <= mid) {
+    temp[k++] = arr[i++];
+  }
+
+  while(j <= end) {
+    temp[k++] = arr[j++];
+  }
+
+  // copy temp array to original array
+  for(int x = start; x <= end; ++x) {
+    arr[x] = temp[x];
+  }
+}
+            </code>
+          </pre>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

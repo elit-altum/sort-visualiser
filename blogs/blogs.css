@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+body {
+  background: rgb(16, 17, 27);
+  color: #fff;;
+}
+
+.blog-container {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.blog-container > h1 {
+  margin-top: 50px;
+  color: #cc2b5e;
+  font-size: 4em;
+}
+
+.blog-container > .tagline {
+  margin-top: 10px;
+  color: #fff;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* .heading-underline {
+  height: 5px;
+  width: 50px;
+  background-color: #753a88;
+} */
+
+.blog-body {
+  margin-top: 40px;
+  background: rgb(7, 8, 17);
+  border-radius: 8px;
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1.2em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.code-snippet {
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+.code-snippet > pre > code {
+  font-size: 0.85em;
+}
