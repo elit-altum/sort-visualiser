@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 * {
-  padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
@@ -15,7 +14,7 @@ body {
 }
 
 .blog-container {
-  max-width: 800px;
+  max-width: 900px;
   display: block;
   margin: 0 auto;
   padding: 0 10px;
@@ -50,9 +49,41 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.code-snippet {
+table {
+  border-collapse: collapse;
+  width: 100%;
   margin-top: 20px;
-  font-size: 1em;
+}
+
+table,
+th,
+td {
+  border: 1px solid #333;
+}
+
+th {
+  font-style: italic;
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em;
+}
+
+tr {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+i {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.blog-body > ol > li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.95em;
+}
+
+.code-snippet {
+  margin: 20px 0;
 }
 
 .code-snippet > pre > code {
