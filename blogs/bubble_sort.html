@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./blogs.css" />
+		<link rel="stylesheet" href="prism/prism.css" />
+		<script src="prism/prism.js"></script>
+
+		<title>Sort Visualizer - Learn Bubble Sort</title>
+	</head>
+
+	<body>
+		<div class="blog-container">
+			<h1>Bubble Sort</h1>
+			<p class="tagline">
+				A sorting algorithm which splits the input array in 2 parts, the sorted
+				part and the unsorted part. In every iteration, it finds the extremum
+				element in the unsorted array using pairwise swapping and adds it to the
+				sorted array.
+			</p>
+			<!-- <div class="heading-underline"></div> -->
+			<div class="blog-body">
+				Bubble Sort is a basic and simple sorting algorithm. It is named after
+				the principle of bubbles in an container, as the larger bubbles move
+				towards the top of the container and the smaller ones stay below.
+				<br />
+				<br />
+				Bubble sort starts sorting the array from right to left, unlike other
+				sorting algorithms. This sorted array is actually in the opposite order
+				than what the expected sorted order is supposed to be (while considering
+				it from right to left).
+
+				<table>
+					<tr>
+						<th>Characteristic</th>
+						<th>Value</th>
+						<th>Notes</th>
+					</tr>
+					<tr>
+						<td>Average Time Complexity</td>
+						<td>O(n<sup>2</sup>)</td>
+						<td>Same for worst case</td>
+					</tr>
+					<tr>
+						<td>Best Time Complexity</td>
+						<td>O(n)</td>
+						<td>For a sorted array</td>
+					</tr>
+					<tr>
+						<td>Space Complexity</td>
+						<td>O(1)</td>
+						<td>No extra storage required</td>
+					</tr>
+				</table>
+
+				<br />
+				Advantages:
+				<ol>
+					<li>Efficient sorting in best case, better than merge sort.</li>
+				</ol>
+				<br />
+				Disadvantages:
+				<ol>
+					<li>
+						Slower operation time as many swaps are performed in every
+						iteration.
+					</li>
+					<li>
+						Inefficient for arrays with large input due to poor time complexity.
+					</li>
+				</ol>
+				<br />
+
+				<h3>Implementation</h3>
+				<br />
+				Bubble sort starts sorting the array in the opposite order of what is
+				expected from the left to right :
+				<i>Ascending order: </i> Sorted array from left to right is descending
+				in nature<br />
+				<i>Descending order: </i> Sorted array from left to right is ascending
+				in nature
+				<br />
+				<br />
+
+				The logic of the <code>bubble_sort()</code> function is pretty simple,
+				it works with 2 iterators:
+				<ol>
+					<li>
+						<code>itr_1</code>: Holds the index of the end of
+						<i>sorted array</i> after which the extremum from the sorted array
+						will be added after every iteration.
+					</li>
+					<li>
+						<code>itr_2</code>: Traverses the unsorted array to find the
+						extremum value in every iteration using pairwise swapping.
+					</li>
+				</ol>
+
+				<br />
+				> Initially, end of sorted array = n<sup>th</sup> index. And the
+				traversal will begin from the first index of array to the last for
+				finding extremum using pairwise swapping.
+				<br />
+				> After an extremum is placed in the sorted array, move the
+				<code>itr_1</code> to the left by 1 and iterate over the unsorted array
+				again.
+				<br />
+				> The first/0<sup>th</sup> element left in the unsorted array will
+				automatically be in the sorted position.
+
+				<br />
+				<br />
+				Code for the following in C++:
+
+				<div class="code-snippet">
+					<pre class="code-snippet">
+            <code class="language-c">
+// function for bubble sort
+void bubble_sort(int arr[], int n) {
+	// i = itr_1 , j = itr_2
+  for(int i = n; i >= 1; --i) {
+		bool swapped = false;
+
+		for(int j = 0; j < i - 1; ++j) {
+			if(arr[j] > arr[j + 1]) {
+				swap(arr[j], arr[j + 1]);
+				swapped = true;
+			}
+		}
+		
+		if(!swapped) {
+			break;
+		}
+	}
+	return;
+}
+            </code>
+          </pre>
+				</div>
+				<br />
+			</div>
+		</div>
+	</body>
+</html>
