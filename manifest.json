@@ -1,0 +1,16 @@
+{
+  "name": "Sort-Visualizer",
+  "short_name": "srt-visual",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#cc2b5e",
+  "description": "A plain sort visualizer for the web!",
+  "theme_color": "#cc2b5e",
+  "icons": [
+    {
+      "src": "./img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
