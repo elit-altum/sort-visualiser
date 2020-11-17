@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./blogs.css" />
+		<link rel="stylesheet" href="prism/prism.css" />
+		<script src="prism/prism.js"></script>
+
+		<title>Sort Visualizer - Learn Insertion Sort</title>
+	</head>
+
+	<body>
+		<div class="blog-container">
+      <div class="next-btn">
+        <a><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+			<h1>Insertion Sort</h1>
+			<p class="tagline">
+				A sorting algorithm which splits the input array in 2 parts, the sorted
+				part and the unsorted part. In every iteration, the last element of the unsorted array is placed at its correct position in the sorted array.
+			</p>
+			<!-- <div class="heading-underline"></div> -->
+			<div class="blog-body">
+				Insertion Sort is a basic and simple sorting algorithm. It is named after the sorting technique used while arranging a deck of cards in the sorted order. Assume you have cards numbered 1, 3, 4, 5 in your hand and you want to place 2 in its correct position. You will make space for it by shifting 5 to the right, then 4, then 3 and then put 2 in its correct position i.e. after 1.
+				<br />
+				<br />
+				Insertion sort starts sorting the array from left to right. The first element of the array is assumed to be at the sorted position.
+
+				<table>
+					<tr>
+						<th>Characteristic</th>
+						<th>Value</th>
+						<th>Notes</th>
+					</tr>
+					<tr>
+						<td>Average Time Complexity</td>
+						<td>O(n<sup>2</sup>)</td>
+						<td>Same for worst case</td>
+					</tr>
+					<tr>
+						<td>Best Time Complexity</td>
+						<td>O(n)</td>
+						<td>For a sorted array</td>
+					</tr>
+					<tr>
+						<td>Space Complexity</td>
+						<td>O(1)</td>
+						<td>No extra storage required</td>
+					</tr>
+				</table>
+
+				<br />
+				Advantages:
+				<ol>
+					<li>Efficient sorting in best case, better than merge sort.</li>
+				</ol>
+				<br />
+				Disadvantages:
+				<ol>
+					
+					<li>
+						Inefficient for arrays with large input due to poor time complexity.
+					</li>
+				</ol>
+				<br />
+
+				<h3>Implementation</h3>
+        <br />
+        Insertion sort should be easy to visualize from the animations. In every iteration the first bar of the unsorted array(red) is placed at its correct position(green) in the sorted array(pink).
+
+				The logic of the <code>bubble_sort()</code> function is pretty simple,
+				it works with 2 iterators:
+				<ol>
+					<li>
+						<code>itr_1</code>: Holds the index of the end of
+						<i>sorted array</i> after which the the unsorted array will begin
+					</li>
+					<li>
+						<code>itr_2</code>: Traverses the sorted array to find the correct position of the unsorted element by shifting all the elements greater than it to the right
+					</li>
+				</ol>
+
+				<br />
+				> Initially, end of sorted array = 0<sup>th</sup> index. And the
+				traversal will begin from the first index of array to the last.
+				<br />
+				> Move <code>itr_2</code> to the left and shift the element to the right if its value is greater than the unsorted element.
+				<br />
+        > For the first element whose value is lesser than the unsorted element, place the unsorted element on the right of that element.
+				<br />
+        > Repeat continuously for the next element of the unsorted array.
+        
+
+				<br />
+				<br />
+				Code for the following in C++:
+
+				<div class="code-snippet">
+					<pre class="code-snippet">
+            <code class="language-c">
+// function for insertion sort
+void insertion_sort(int arr[], int n) {
+
+	// i = itr_1 , j = itr_2
+  for(int i = 1; i < n; ++i) {
+
+	int unsorted = arr[i];
+    int j = i - 1;
+
+    // traverse the sorted array
+    while(j >= 0 && arr[j] > unsorted) {
+      arr[j + 1] = arr[j];
+    }
+    j++;
+
+    arr[j] = unsorted;
+  }
+  
+	return;
+}
+            </code>
+          </pre>
+				</div>
+				<br />
+			</div>
+		</div>
+	</body>
+</html>
