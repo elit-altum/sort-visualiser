@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./blogs.css" />
+		<link rel="stylesheet" href="prism/prism.css" />
+		<script src="prism/prism.js"></script>
+
+		<title>Sort Visualizer - Learn Selection Sort</title>
+	</head>
+
+	<body>
+		<div class="blog-container">
+      <div class="next-btn">
+        <a href="./insertion_sort.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+			<h1>Selection Sort</h1>
+			<p class="tagline">
+				A sorting algorithm which splits the input array in 2 parts, the sorted
+				part and the unsorted part. In every iteration, the minimum element is found from the unsorted array and appended to the sorted array.
+			</p>
+			<!-- <div class="heading-underline"></div> -->
+			<div class="blog-body">
+				Selection Sort is a basic and simple sorting algorithm. It is named so, as in every iteration, the correct element to be inserted next in the sorted array is selected from the unsorted array and then added to it.
+				<br />
+				<br />
+				Selection sort starts sorting the array from left to right. The last element left in the unsorted array is assumed to be at the sorted position.
+
+				<table>
+					<tr>
+						<th>Characteristic</th>
+						<th>Value</th>
+						<th>Notes</th>
+					</tr>
+					<tr>
+						<td>Average Time Complexity</td>
+						<td>O(n<sup>2</sup>)</td>
+						<td>Same for worst case</td>
+					</tr>
+					<tr>
+						<td>Best Time Complexity</td>
+						<td>O(n<sup>2</sup>)</td>
+						<td>For a sorted array as well</td>
+					</tr>
+					<tr>
+						<td>Space Complexity</td>
+						<td>O(1)</td>
+						<td>No extra storage required</td>
+					</tr>
+				</table>
+
+				<br />
+				Advantages:
+				<ol>
+					<li>Easier to understand and more intuitive</li>
+				</ol>
+				<br />
+				Disadvantages:
+				<ol>
+					
+					<li>
+						Inefficient for arrays with large input due to poor time complexity and no possible optimization.
+					</li>
+				</ol>
+				<br />
+
+				<h3>Implementation</h3>
+        <br />
+        Selection sort should be easy to visualize from the animations. In every iteration the smallest bar of the unsorted array(red) is picked(green) and added at the end of the sorted array(pink).
+
+				The logic of the <code>selection_sort()</code> function is pretty simple,
+				it works with 2 iterators:
+				<ol>
+					<li>
+						<code>itr_1</code>: Holds the index of the end of
+						<i>sorted array</i> after which the the unsorted array will begin
+					</li>
+					<li>
+						<code>itr_2</code>: Traverses the unsorted array to find the smallest element from the unsorted array.
+					</li>
+				</ol>
+
+				<br />
+				> Initially, end of sorted array = -1<sup>th</sup> index. And the
+				traversal will begin from the 0<sup>th</sup> index of array to the last.
+				<br />
+				> Traverse <code>itr_2</code> in the unsorted array and find the minimum value among them
+				<br />
+        > Swap this smallest value with the end of sorted array to replace the last element.
+				<br />
+        > Repeat continuously for the next element of the unsorted array.
+        
+
+				<br />
+				<br />
+				Code for the following in C++:
+
+				<div class="code-snippet">
+					<pre class="code-snippet">
+            <code class="language-c">
+// function for selection sort
+void selection_sort(int arr[], int n) {
+
+	// i = itr_1 , j = itr_2
+  for(int i = 0; i < n - 1; ++i) {
+
+	int min_idx = i;
+
+    // traverse the un-sorted array
+    for(int j = i + 1; j < n; ++j) {
+      if(arr[j] < arr[min_idx]) {
+        min_idx = j;
+      }
+    }
+
+    // swap the values
+    swap(arr[i], arr[min_idx]);    
+  }
+	return;
+}
+            </code>
+          </pre>
+				</div>
+				<br />
+			</div>
+		</div>
+	</body>
+</html>
