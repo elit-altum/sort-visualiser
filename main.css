@@ -88,6 +88,28 @@ body {
   color: white;
 }
 
+.ctrl-buttons {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctrl-buttons button {
+  margin: 0 5%;
+}
+
+@media screen and (max-width: 500px) {
+  .ctrl-buttons{
+    width: 100%;
+    margin: 10px 0;
+
+  }
+  .ctrl-buttons button {
+    margin: 5% 5%;
+  }
+}
+
 .header span {
   font-weight: bold;
 }

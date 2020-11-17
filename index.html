@@ -13,8 +13,16 @@
 	<body class="expand">
 		<div class="header-container">
 			<div class="header">
-				<div class="section" style="align-self: center">
+				<div class="section nav" style="align-self: center">
 					<span>SORT VISUALISER</span>
+        </div>
+        <div class="section">
+					<select>
+						<option value="1">Selection Sort</option>
+						<option value="2">Bubble Sort</option>
+						<option value="3">Insertion Sort</option>
+						<option value="4">Merge Sort</option>
+					</select>
 				</div>
 				<div class="section">
 					<input
@@ -47,23 +55,11 @@
 						>Number of Elements</label
 					>
 				</div>
-				<div class="section">
-					<select>
-						<option value="1">Selection Sort</option>
-						<option value="2">Bubble Sort</option>
-						<option value="3">Insertion Sort</option>
-						<option value="4">Merge Sort</option>
-					</select>
-				</div>
-				<div class="section">
+				<div class="ctrl-buttons">
 					<button name="sort" onclick="sort()" id="sort-btn">Sort</button>
-				</div>
-				<div class="section">
 					<button onclick="shuffleArray()">Shuffle</button>
+					<button><a href="./blogs/selection_sort.html">Learn</a></button>  
         </div>
-        <div class="section">
-					<button><a href="./blogs/selection_sort.html">Learn</a></button>
-				</div>
 			</div>
 		</div>
 		<div class="table expand"></div>
