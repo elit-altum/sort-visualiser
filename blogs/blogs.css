@@ -33,6 +33,23 @@ body {
   font-size: 0.9em;
 }
 
+.next-btn {
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+  width: 40px;
+  height: 40px;
+  background-color: #cc2b5e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
+}
+
+.next-btn > a {
+  color: #fff;
+}
 /* .heading-underline {
   height: 5px;
   width: 50px;
