@@ -1,126 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon" />
     <link rel= “manifest” href= “../manifest.json” />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="./blogs.css" />
-		<link rel="stylesheet" href="prism/prism.css" />
-		<script src="prism/prism.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./blogs.css" />
+    <link rel="stylesheet" href="prism/prism.css" />
+    <script src="prism/prism.js"></script>
 
-		<title>Sort Visualizer - Learn Merge Sort</title>
-	</head>
+    <title>Sort Visualizer - Learn Merge Sort</title>
+  </head>
 
-	<body>
-		<div class="blog-container">
-      <div class="next-btn">
-        <a href="../index.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-			<h1>Merge Sort</h1>
-			<p class="tagline">
-				An efficient sorting algorithm which splits the input array in 2 halves,
-				sorts these two halves individually and then merges them to a single
-				sorted array.
-			</p>
-			<!-- <div class="heading-underline"></div> -->
-			<div class="blog-body">
-				Merge Sort is a divide and conquer algorithm. It divides the provided
-				array in two halves, calls itself for the two halves and then merges the
-				two sorted halves. This process is done recursively to sort the whole
-				array.
-				<br />
-				<br />
-				Merge sort is one of the most efficient algorithms for sorting an array
-				of values.
+  <body>
+    <div class="blog-container">
+      <a href="../index.html">
+        <div class="next-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      </a>
+      <h1>Merge Sort</h1>
+      <p class="tagline">
+        An efficient sorting algorithm which splits the input array in 2 halves,
+        sorts these two halves individually and then merges them to a single
+        sorted array.
+      </p>
+      <!-- <div class="heading-underline"></div> -->
+      <div class="blog-body">
+        Merge Sort is a divide and conquer algorithm. It divides the provided
+        array in two halves, calls itself for the two halves and then merges the
+        two sorted halves. This process is done recursively to sort the whole
+        array.
+        <br />
+        <br />
+        Merge sort is one of the most efficient algorithms for sorting an array
+        of values.
 
-				<table>
-					<tr>
-						<th>Characteristic</th>
-						<th>Value</th>
-						<th>Notes</th>
-					</tr>
-					<tr>
-						<td>Time Complexity</td>
-						<td>O(nlogn)</td>
-						<td>For all cases, worst/best/average</td>
-					</tr>
-					<tr>
-						<td>Space Complexity</td>
-						<td>O(n)</td>
-						<td>Temporary array for extra storage</td>
-					</tr>
-				</table>
+        <table>
+          <tr>
+            <th>Characteristic</th>
+            <th>Value</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Time Complexity</td>
+            <td>O(nlogn)</td>
+            <td>For all cases, worst/best/average</td>
+          </tr>
+          <tr>
+            <td>Space Complexity</td>
+            <td>O(n)</td>
+            <td>Temporary array for extra storage</td>
+          </tr>
+        </table>
 
-				<br />
-				Advantages:
-				<ol>
-					<li>
-						Efficient sorting in average case, way better than bubble, selection
-						and insertion sort.
-					</li>
-					<li>
-						Recursive and efficient implementation using simple functions.
-					</li>
-				</ol>
-				<br />
-				Disadvantages:
-				<ol>
-					<li>
-						Takes extra space of O(n) time, therefore, if the size of data being
-						held by an array is large, the function becomes inefficient.
-					</li>
-					<li>
-						Has best case complexity of O(nlogn) only, while insertion and
-						bubble sort have best case complexity of O(n) (sorting an already
-						sorted array)
-					</li>
-				</ol>
-				<br />
+        <br />
+        Advantages:
+        <ol>
+          <li>
+            Efficient sorting in average case, way better than bubble, selection
+            and insertion sort.
+          </li>
+          <li>
+            Recursive and efficient implementation using simple functions.
+          </li>
+        </ol>
+        <br />
+        Disadvantages:
+        <ol>
+          <li>
+            Takes extra space of O(n) time, therefore, if the size of data being
+            held by an array is large, the function becomes inefficient.
+          </li>
+          <li>
+            Has best case complexity of O(nlogn) only, while insertion and
+            bubble sort have best case complexity of O(n) (sorting an already
+            sorted array)
+          </li>
+        </ol>
+        <br />
 
-				<h3>Implementation</h3>
-				<br />
-				Merge sort recursively consists of 2 functions, one function for
-				<i>merging</i> the sorted arrays and one for
-				<i>recursively sorting</i> the split arrays.
-				<br />
-				<br />
+        <h3>Implementation</h3>
+        <br />
+        Merge sort recursively consists of 2 functions, one function for
+        <i>merging</i> the sorted arrays and one for
+        <i>recursively sorting</i> the split arrays.
+        <br />
+        <br />
 
-				The logic of the <code>merge()</code> function is pretty simple, it
-				works with 3 iterators and one temporary array to hold the result of the
-				merging:
-				<ol>
-					<li>
-						<code>itr_1</code>: Holds the index to the value to compare in the
-						first sorted array.
-					</li>
-					<li>
-						<code>itr_2</code>: Holds the index to the value to compare in the
-						second sorted array.
-					</li>
-					<li>
-						<code>itr_3</code>: Holds the last index of the temporary array.
-					</li>
-				</ol>
+        The logic of the <code>merge()</code> function is pretty simple, it
+        works with 3 iterators and one temporary array to hold the result of the
+        merging:
+        <ol>
+          <li>
+            <code>itr_1</code>: Holds the index to the value to compare in the
+            first sorted array.
+          </li>
+          <li>
+            <code>itr_2</code>: Holds the index to the value to compare in the
+            second sorted array.
+          </li>
+          <li>
+            <code>itr_3</code>: Holds the last index of the temporary array.
+          </li>
+        </ol>
 
-				<br />
-				> It compares the values in both the sorted arrays, and then appends the
-				smaller among the two to the temporary array. It then increments the
-				iterator to the array holding the smaller value by 1.
-				<br />
-				> If any one array reaches it's end, the other array is copied directly
-				to the temporary array.
-				<br />
-				> At the end, the temporary array is copied back to the main array for
-				an in-place sorting algorithm.
+        <br />
+        > It compares the values in both the sorted arrays, and then appends the
+        smaller among the two to the temporary array. It then increments the
+        iterator to the array holding the smaller value by 1.
+        <br />
+        > If any one array reaches it's end, the other array is copied directly
+        to the temporary array.
+        <br />
+        > At the end, the temporary array is copied back to the main array for
+        an in-place sorting algorithm.
 
-				<br />
-				<br />
-				Code for the following in C++:
+        <br />
+        <br />
+        Code for the following in C++:
 
-				<div class="code-snippet">
-					<pre class="code-snippet">
+        <div class="code-snippet">
+          <pre class="code-snippet">
             <code class="language-c">
 // merge function
 void merge(int arr[], int start, int end) {
@@ -155,38 +160,38 @@ void merge(int arr[], int start, int end) {
 }
             </code>
           </pre>
-				</div>
-				<br />
-				The second function is the one used for recursively sorting arrays and
-				the sub-arrays. <br />
-				This function, for every array in input : <br />
-				> Splits that array in half and recursively sorts the 2 halves.<br />
-				> Merges the two sorted halves using the previously defined
-				<code>merge()</code> function in a single array.
+        </div>
+        <br />
+        The second function is the one used for recursively sorting arrays and
+        the sub-arrays. <br />
+        This function, for every array in input : <br />
+        > Splits that array in half and recursively sorts the 2 halves.<br />
+        > Merges the two sorted halves using the previously defined
+        <code>merge()</code> function in a single array.
 
-				<br />
-				<br />
-				As this function is a recursive function it has 2 cases:
-				<ol>
-					<li>
-						<i>Base Case</i> : This is the stopping case/bottom case for a
-						recursive function. For an input array, if the size of that array is
-						0/1 i.e. an empty array or an array with only 1 element is always
-						sorted in itself.
-					</li>
-					<li>
-						<i>Recursive Case</i> : This is the case the function will make
-						recursive calls on a smaller subproblem. For any array with size >
-						1, we can split that array in halves, sort these halves recursively,
-						and merge the sorted halves.
-					</li>
-				</ol>
-				<br />
-				<br />
-				Code for the following in C++:
+        <br />
+        <br />
+        As this function is a recursive function it has 2 cases:
+        <ol>
+          <li>
+            <i>Base Case</i> : This is the stopping case/bottom case for a
+            recursive function. For an input array, if the size of that array is
+            0/1 i.e. an empty array or an array with only 1 element is always
+            sorted in itself.
+          </li>
+          <li>
+            <i>Recursive Case</i> : This is the case the function will make
+            recursive calls on a smaller subproblem. For any array with size >
+            1, we can split that array in halves, sort these halves recursively,
+            and merge the sorted halves.
+          </li>
+        </ol>
+        <br />
+        <br />
+        Code for the following in C++:
 
-				<div class="code-snippet">
-					<pre class="code-snippet">
+        <div class="code-snippet">
+          <pre class="code-snippet">
             <code class="language-c">
 // merge_sort function
 void merge_sort(int arr[], int start, int end) {
@@ -206,8 +211,8 @@ void merge_sort(int arr[], int start, int end) {
 }
             </code>
           </pre>
-				</div>
-			</div>
-		</div>
-	</body>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
